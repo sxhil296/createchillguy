@@ -2,7 +2,18 @@ import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BsDownload } from "react-icons/bs";
 import { PiCopySimpleLight } from "react-icons/pi";
-const Customs = () => {
+
+type CustomsProps = {
+  solidBg: string;
+  handleSolidBg: (e: React.ChangeEvent<HTMLInputElement>) => void;
+};
+
+
+
+
+const Customs = ({ solidBg, handleSolidBg }: CustomsProps) => {
+
+
   return (
     <div className="flex flex-col rounded-md border shadow-lg cursor-pointer w-[320px] h-[60%] p-4">
       {/*for  background color */}
@@ -20,6 +31,8 @@ const Customs = () => {
                 type="color"
                 className="w-10 h-10 border rounded-md"
                 aria-label="Solid color picker"
+                value={solidBg}
+                onChange={handleSolidBg}
               />
             </div>
           </TabsContent>
